@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" crossorigin="anonymous"></script>
+<script>
+
+$(document).ready(function(){
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const token = urlParams.get('token');
+  const userID = urlParams.get('userID');
+  console.log(token);
+
+    if (token != "" && token != null) {
+      $.post("https://api.xn--vandstrm-c5a.com/1.0/verifyEmail",
+      {
+        token: token,
+        userID: userID
+      },
+      function(data,status){
+        $("#data").text(data.message);
+      },
+      "json"
+      );
+    } else {
+      alert("no token received");
+    }
+});
+</script>
+</head>
+<body>
+  <p>Email Verification Page </p>
+  <p id="data"></p>
+
+</body>
+</html>
