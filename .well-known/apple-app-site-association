@@ -10,5 +10,8 @@
         ]
       }
     ]
-  }
+  },
+   "webcredentials": {
+      "apps": ["385RCNMZ5L.com.mtzfederico.waterMeter"]
+   }
 }
