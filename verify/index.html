@@ -12,7 +12,7 @@ $(document).ready(function(){
   console.log(token);
 
     if (token != "" && token != null) {
-      $.post("https://api.xn--vandstrm-c5a.com/1.0/verifyEmail",
+      $.post("https://api.xn--vandstrm-c5a.com/v1.0/verifyEmail",
       {
         token: token,
         userID: userID
