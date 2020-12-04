@@ -18,7 +18,7 @@ $(document).ready(function(){
         userID: userID
       },
       function(data,status){
-        $("#data").text(data.message);
+        $("#data").text(data.success);
       },
       "json"
       );
@@ -29,7 +29,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-  <p>Email Verification Page </p>
+  <p>"Email Verification Page"</p>
   <p id="data"></p>
 
 </body>
