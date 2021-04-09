@@ -1,0 +1,16 @@
+/* Light mode */
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: white;
+        color: #393131;
+        /*font-family:  'Ubuntu Mono', 'Consolas', 'Roboto Mono'; font-size: 18px;*/
+    }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: white;
+        /*font-family:  'Ubuntu Mono', 'Consolas', 'Roboto Mono'; font-size: 18px;*/
+    }
