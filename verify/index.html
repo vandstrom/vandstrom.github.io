@@ -9,9 +9,8 @@ $(document).ready(function(){
   const urlParams = new URLSearchParams(window.location.search);
   const token = urlParams.get('token');
   const userID = urlParams.get('userID');
-  console.log(token);
 
-    if (token != "" || token != null) {
+    if (token != "" && token != null) {
       $.post("https://api.xn--vandstrm-c5a.com/v1.0/verifyEmail",
       {
         token: token,
@@ -28,7 +27,8 @@ $(document).ready(function(){
       "json"
       );
       } else {
-      alert("no token received");
+      <!-- alert("no token received"); -->
+      $("#data").text("No token received");
       };
 });
 
