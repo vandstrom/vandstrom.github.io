@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" crossorigin="anonymous"></script>
 <script>
 
 $(document).ready(function(){
-
   const urlParams = new URLSearchParams(window.location.search);
   const token = urlParams.get('token');
   const userID = urlParams.get('userID');
@@ -18,21 +18,24 @@ $(document).ready(function(){
         userID: userID
       },
       function(data,status){
-        $("#data").text(data);
-        $("#status").text(status);
+        if (data.success == false) {
+          $("#data").text(data.error);
+        } else {
+          $("#data").text("Success");
+        }
+        $("#data").text(data.message);
       },
       "json"
       );
-    } else {
+      } else {
       alert("no token received");
-    }
+      };
 });
+
 </script>
 </head>
 <body>
-  <p>Email Verification Page</p>
+  <b>Email Verification Page</b>
   <p id="data"></p>
-  <p id="status"></p>
-
 </body>
 </html>
