@@ -11,7 +11,7 @@ $(document).ready(function(){
   const userID = urlParams.get('userID');
   console.log(token);
 
-    if (token != "" && token != null) {
+    if (token != "" || token != null) {
       $.post("https://api.xn--vandstrm-c5a.com/v1.0/verifyEmail",
       {
         token: token,
